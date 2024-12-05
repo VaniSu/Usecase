@@ -1,4 +1,4 @@
-name: First Workflow
+name: Second Workflow
 
 on:
   push: 
@@ -10,19 +10,6 @@ jobs:
     - name: print hello world
       run: echo "Hello World"
 
-  echo_goodbye:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Failed Step
-        run: | 
-          echo "I will fail" 
-          echo "I will fail" 
-          echo "I will fail" 
-          exit 0
-
-      - name: Say goodbye
-        run: 
-          echo "Goodbye!" 
-          exit 0
+  
 
      
