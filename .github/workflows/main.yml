@@ -25,11 +25,4 @@ jobs:
           echo "Goodbye!" 
           exit 0
 
-      - name: Last Step
-        run: | 
-         echo "I will fail" 
-         echo "I will fail" 
-         echo "I will fail" 
-         exit 0
-
      
