@@ -1,7 +1,9 @@
 name: Second Workflow
 
 on:
-  push: 
+  pull_request:
+    branches:
+      - main
 
 jobs:
   echo_hello_world:
