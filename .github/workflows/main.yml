@@ -7,11 +7,33 @@ on:
       # - reopened
 
 jobs:
-  echo_hello_world:
+  linux:
     runs-on: ubuntu-latest
     steps:
-    - name: print hello world
-      run: echo "Hello World"
+    - name: linux
+      run: |
+        echo "This job is running on an Ubuntu runner"
+        echo "Runner OS is $RUNNER_OS"
+        
+
+  windows:
+    runs-on: window-latest
+    steps:
+    - name: windows
+      shell: bash
+      run: |
+        echo "This job is running on an windows runner"
+        echo "Runner OS is $RUNNER_OS"
+        
+  mac:
+    runs-on: mac-latest
+    steps:
+    - name: mac
+      run: |
+        echo "This job is running on an mac runner"
+        echo "Runner OS is $RUNNER_OS"
+
+ 
 
   
 
