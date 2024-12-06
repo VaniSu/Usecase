@@ -1,7 +1,10 @@
-name: Runner Workflow
+name: Pull request with specific type Workflow
 
 on:
-  push
+  pull_request:
+    types:
+      - opened
+      # - reopened
 
 jobs:
   linux:
