@@ -1,9 +1,10 @@
-name: Second Workflow
+name: Pull request with specific type Workflow
 
 on:
   pull_request:
-    branches:
-      - main
+    types:
+      - opened
+      # - reopened
 
 jobs:
   echo_hello_world:
