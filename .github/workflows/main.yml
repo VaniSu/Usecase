@@ -3,9 +3,7 @@ name: Runner Workflow
 on:
   pull_request:
     types:
-      - opened
-    
-
+      - opened    
 jobs:
   linux:
     runs-on: ubuntu-latest
