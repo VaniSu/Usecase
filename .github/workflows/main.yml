@@ -1,10 +1,9 @@
 name: Multiple Branches for Pull Request Workflow
 
 on:
-  pull_request:
-    branches:
-      - main
-      - feature1
+  push:
+    paths:
+      - File
       
 jobs:
   linux:
