@@ -1,9 +1,10 @@
-name: Runner Workflow
+name: Multiple Branches for Pull Request Workflow
 
 on:
   pull_request:
-    types:
-      - opened    
+    branches:
+      - main
+      - feature1
 jobs:
   linux:
     runs-on: ubuntu-latest
