@@ -1,7 +1,10 @@
 name: Runner Workflow
 
 on:
-  push
+  pull_request:
+    types:
+      - opened
+    
 
 jobs:
   linux:
@@ -13,22 +16,6 @@ jobs:
         echo "Runner OS is $RUNNER_OS"
         
 
-  windows:
-    runs-on: window-latest
-    steps:
-    - name: windows
-      shell: bash
-      run: |
-        echo "This job is running on an windows runner"
-        echo "Runner OS is $RUNNER_OS"
-        
-  mac:
-    runs-on: mac-latest
-    steps:
-    - name: mac
-      run: |
-        echo "This job is running on an mac runner"
-        echo "Runner OS is $RUNNER_OS"
 
  
 
