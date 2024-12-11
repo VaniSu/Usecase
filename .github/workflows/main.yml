@@ -23,6 +23,7 @@ jobs:
         else 
           echo "Using STAGING_API_URL: $STAGING_API_URL"
           echo "Deploying to Staging with version $VERSION"
+        fi
         
 
 
