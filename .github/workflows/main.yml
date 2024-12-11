@@ -17,7 +17,8 @@ jobs:
     steps:
     - name: Set Env
       run: |
-        if [ ${{ github.ref }} == "main" ]; then
+        echo "Branch is ${{ github.ref_name }}"
+        if [ ${{ github.ref_name }} == "main" ]; then
           echo "Using PRODUCTION_API_URL: $PRODUCTION_API_URL"
           echo "Deploying to Production with version $VERSION"
         else 
