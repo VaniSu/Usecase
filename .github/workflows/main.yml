@@ -1,18 +1,29 @@
-name: Multiple Branches for Pull Request Workflow
+name: Deployment for env 
 
 on:
   push:
-    paths:
-      - File
+    branches:
+      - main
+      - dev
       
 jobs:
-  linux:
+  deploy:
     runs-on: ubuntu-latest
+    env:
+      STAGING_API_URL: https://staging-api.example.com 
+      PRODUCTION_API_URL: https://api.example.com 
+      VERSION: v1.1.0
+      
     steps:
-    - name: linux
+    - name: Set Env
       run: |
-        echo "This job is running on an Ubuntu runner"
-        echo "Runner OS is $RUNNER_OS"
+        if [ ${{ github.ref }} == "main" ]; then
+          echo "Using PRODUCTION_API_URL: $PRODUCTION_API_URL"
+          echo "Deploying to Production with version $VERSION"
+        else 
+          echo "Using STAGING_API_URL: $STAGING_API_URL"
+          echo "Deploying to Staging with version $VERSION"
+        fi
         
 
 
